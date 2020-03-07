@@ -1,3 +1,5 @@
 TensorflowNeuralNetwork
 .idea
 tensorflow
+data_management/datasets
+data_management/__pycache__/

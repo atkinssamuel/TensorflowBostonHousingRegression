@@ -38,8 +38,8 @@ def test(x_test, y_test, checkpoint_file):
         plt.title("Actual vs. Approximation")
         plt.ylabel("Estimated Revenue in $")
         plt.legend()
-        plt.show()
         plt.savefig(results_folder + "testing_results.png")
+        plt.show()
         test_loss = np.sum(np.square(test_output - y_test)/np.shape(test_output)[0])
         print("Test Loss =", test_loss)
 

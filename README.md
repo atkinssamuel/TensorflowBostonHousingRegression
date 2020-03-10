@@ -45,4 +45,4 @@ The curve below delineates the quality of the model during testing:
 
 *Figure 2: The approximated fit overlayed upon the actual data*
 
-Given the limited data, the failure of the model is expected. Despite the weak fit shown in Figure 2, this model clearly demonstrated that it was capable of generally approximating the data. 
+Given the limited data, the failure of the model was expected, and has been configrmed by the above Figure. Many peaks and valleys were completed dismissed by the fit. Despite this, the model clearly demonstrated its capability to generally approximate the data. 

@@ -1,8 +1,7 @@
 import tensorflow as tf
 import numpy as np
-from project.train import checkpoint_dir
+from project.train import checkpoint_dir, results_folder
 import matplotlib.pyplot as plt
-import os
 
 def test(x_test, y_test, checkpoint_file):
     y_test = y_test.reshape((np.shape(y_test)[0], 1))
@@ -34,9 +33,13 @@ def test(x_test, y_test, checkpoint_file):
         saver.restore(sess, checkpoint)
 
         test_output = sess.run(y, feed_dict={x: x_test, y_: y_test})
-        plt.plot(test_output)
-        plt.plot(y_test)
+        plt.plot(test_output, label="Approximation")
+        plt.plot(y_test, label="Actual")
+        plt.title("Actual vs. Approximation")
+        plt.ylabel("Estimated Revenue in $")
+        plt.legend()
         plt.show()
+        plt.savefig(results_folder + "testing_results.png")
         test_loss = np.sum(np.square(test_output - y_test)/np.shape(test_output)[0])
         print("Test Loss =", test_loss)
 

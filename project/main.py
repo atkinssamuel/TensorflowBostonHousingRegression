@@ -4,16 +4,15 @@ from project.test import test
 
 if __name__ == "__main__":
     _train = 0
-
     (x_train, y_train), (x_test, y_test) = load_boston_housing()
 
     # Training Parameters:
-    learning_rate = 0.01
-    num_epochs = 300
-    num_models = 50
+    learning_rate = 0.001
+    num_epochs = 2000
+    num_models = 10
     batch_size = 64
     # Testing Parameters:
-    checkpoint_file = "epoch_280.ckpt"
+    checkpoint_file = "epoch_1990.ckpt"
     if _train:
         train(x_train, y_train, learning_rate, num_epochs, batch_size, checkpoint_frequency=10, num_models=num_models)
     else:

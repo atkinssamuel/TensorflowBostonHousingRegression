@@ -3,6 +3,7 @@ import numpy as np
 import matplotlib.pyplot as plt
 
 checkpoint_dir = "weights/"
+results_folder = "results/"
 
 
 def train(x_train, y_train, learning_rate, num_epochs, batch_size, checkpoint_frequency=10, num_models=200):
@@ -19,7 +20,7 @@ def train(x_train, y_train, learning_rate, num_epochs, batch_size, checkpoint_fr
     # Layer 1 variables:
     W1 = tf.Variable(tf.truncated_normal([input_nodes, hidden_layer_1], stddev=0.15))
     b1 = tf.Variable(tf.zeros([hidden_layer_1]))
-    y1 = tf.math.square(tf.matmul(x, W1) + b1)
+    y1 = tf.math.sigmoid(tf.matmul(x, W1) + b1)
     # layer 2 variables:
     W2 = tf.Variable(tf.truncated_normal([hidden_layer_1, hidden_layer_2], stddev=0.15))
     b2 = tf.Variable(tf.zeros([hidden_layer_2]))
@@ -52,7 +53,7 @@ def train(x_train, y_train, learning_rate, num_epochs, batch_size, checkpoint_fr
 
             if epoch_iteration % checkpoint_frequency == 0:
                 checkpoint = checkpoint_dir + f"epoch_{epoch_iteration}.ckpt"
-                print(saver.save(sess, checkpoint))
+                saver.save(sess, checkpoint)
 
         sess.close()
 
@@ -60,6 +61,7 @@ def train(x_train, y_train, learning_rate, num_epochs, batch_size, checkpoint_fr
     plt.ylabel("Loss")
     plt.xlabel("Epoch Iteration")
     plt.plot(training_losses)
+    plt.savefig(results_folder + "training_loss.png")
     plt.show()
     return
 

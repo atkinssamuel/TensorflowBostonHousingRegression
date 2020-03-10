@@ -46,3 +46,10 @@ The curve below delineates the quality of the model during testing:
 *Figure 2: The approximated fit overlayed upon the actual data*
 
 Given the limited data, the failure of the model was expected, and has been configrmed by the above Figure. Many peaks and valleys were completed dismissed by the fit. Despite this, the model clearly demonstrated its capability to generally approximate the data. 
+
+## Duplication Instructions:
+1. Clone the repository.
+2. Ensure Tensorflow 1.14 is installed (pip install tensorflow==1.14.0).
+3. Create a "/weights" directory to store the weights.
+4. Create "/data_management/boston_housing" directory and "/data_management/cifar100" directories.
+5. Edit and run the main file according to which set of weights are deemed optimal.

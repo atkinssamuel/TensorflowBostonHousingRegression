@@ -19,7 +19,7 @@ def train(x_train, y_train, learning_rate, num_epochs, batch_size, checkpoint_fr
     # Layer 1 variables:
     W1 = tf.Variable(tf.truncated_normal([input_nodes, hidden_layer_1], stddev=0.15))
     b1 = tf.Variable(tf.zeros([hidden_layer_1]))
-    y1 = tf.math.sigmoid(tf.matmul(x, W1) + b1)
+    y1 = tf.math.square(tf.matmul(x, W1) + b1)
     # layer 2 variables:
     W2 = tf.Variable(tf.truncated_normal([hidden_layer_1, hidden_layer_2], stddev=0.15))
     b2 = tf.Variable(tf.zeros([hidden_layer_2]))

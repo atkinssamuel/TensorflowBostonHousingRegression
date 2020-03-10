@@ -39,7 +39,7 @@ def load_boston_housing():
     x_train = np.load(boston_100_dir + "x_train.npy")
     y_train = np.load(boston_100_dir + "y_train.npy")
     x_test = np.load(boston_100_dir + "x_test.npy")
-    y_test = np.load(boston_100_dir + "x_test.npy")
+    y_test = np.load(boston_100_dir + "y_test.npy")
 
     return (x_train, y_train), (x_test, y_test)
 

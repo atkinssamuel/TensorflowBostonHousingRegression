@@ -6,3 +6,4 @@ data_management/__pycache__/
 data_management/boston_housing/
 data_management/cifar100/
 project/__pycache__/
+weights/
